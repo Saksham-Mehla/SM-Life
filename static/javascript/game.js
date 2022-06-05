@@ -199,14 +199,16 @@ life.area.addEventListener("click", function() {
 		let col = Math.floor(event.clientX / cellWidth);
 		let row =  Math.floor((event.clientY - 116 - 20) / cellWidth);
 
-		if(life.matrix[row][col] == 0){
-			life.matrix[row][col] = 1;
-		}
-		else {
-			life.matrix[row][col] = 0;
-		}
-		console.log(row , col);
-		life.render();
+		if(row<20 && (col > Math.floor(life.matrix[0].length/2)+30 || col < Math.floor(life.matrix[0].length/2)-30)) {
+			if(life.matrix[row][col] == 0){
+				life.matrix[row][col] = 1;
+			}
+			else {
+				life.matrix[row][col] = 0;
+			}
+			console.log(row , col);
+			life.render();
+		}		
 	}
 	else if(!life.running && flag==0) {
 		flag=1;
@@ -216,15 +218,16 @@ life.area.addEventListener("click", function() {
 document.getElementById("play").addEventListener("click", function() {
 	if(!life.running) {
 		document.getElementById("play").style.backgroundImage = 'url(../static/img/pause.svg)';
+		moves++;
+		document.getElementsByClassName("moves")[0].innerHTML = "Moves: " + moves;
+		document.getElementsByClassName("moves")[1].innerHTML = "Moves: " + moves;
 	}
 	else {
 		document.getElementById("play").style.backgroundImage = 'url(../static/img/play.svg)';
 	}
 	life.running = !life.running;
 	flag = 0;
-	moves++;
-	document.getElementsByClassName("moves")[0].innerHTML = "Moves: " + moves;
-	document.getElementsByClassName("moves")[1].innerHTML = "Moves: " + moves;
+	
 
 });
 
