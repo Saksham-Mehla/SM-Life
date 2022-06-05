@@ -10,6 +10,8 @@ Based on these rules and similar conditions is the game "SM/Life".
 
 Youtube: [https://youtu.be/68qP1mHWJhU](https://youtu.be/68qP1mHWJhU)
 
+Play here: [https://sm-life.herokuapp.com/](https://sm-life.herokuapp.com/)
+
 ![life](https://user-images.githubusercontent.com/55681184/172067448-abcb7625-2e52-4f8d-8264-1beead62b8af.png)
 
 ## Objective
