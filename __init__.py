@@ -30,5 +30,8 @@ def create_app(test_config=None):
     from . import howtoplay
     app.register_blueprint(howtoplay.bp)
 
+    from . import practice
+    app.register_blueprint(practice.bp)
+
 
     return app
