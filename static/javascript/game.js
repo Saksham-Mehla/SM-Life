@@ -131,9 +131,23 @@ life.render();
 
 var flag = 0;
 var moves = 0;
-var modal = document.getElementById("gameover");
 var restart = document.getElementsByClassName("restart");
+var howModal = document.getElementById("howModal");
+var span = document.getElementsByClassName("close")[0];
 
+document.getElementById("howtoplay").addEventListener("click", function(){
+	howModal.style.display = "block";
+});
+
+span.addEventListener("click", function(){
+	howModal.style.display = "none";
+});
+
+window.addEventListener("click", function() {
+	if (event.target == modal) {
+		howModal.style.display = "none";
+	}
+});
 
 startGame();
 // addRightDown(life, 0, Math.floor(Math.random()*20));

@@ -113,7 +113,7 @@ p.life, p.moves {
     padding-top: 20px;
 }
 
-.modal {
+.modal, .howModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */

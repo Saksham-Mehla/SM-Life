@@ -22,7 +22,7 @@
               <div class="row" style="padding: 5px"></div>
               <button id="play" type="button" style="background-image: url(../static/img/play.svg); margin-left: 100px"></button>
               <button class="restart" type="button" style="background-image: url(../static/img/restart1.svg); margin-left: 10px"></button>
-              <button class="info" type="button" style="background-image: url(../static/img/info.svg); margin-left: 10px"></button>
+              <button id="howtoplay" class="info" type="button" style="background-image: url(../static/img/info.svg); margin-left: 10px"></button>
               <a href="{{ url_for('home.home') }}">
                 <button id="close" type="button" style="background-image: url(../static/img/close.svg); margin-left: 10px"></button>
               </a>
@@ -48,6 +48,51 @@
               <div class="row" style="padding-top: 30px"></div>
                
           </div>
+      </div>
+
+      <div id="howModal" class="modal">
+        <div class="modal-content box">
+            <span class="close">&times;</span>
+            <p style="font-size: 200%; font-weight: bold;">How to Play</p>
+            <div>
+              <div class="row" style="margin: 20px">
+                <p>This is Cello.</p>
+                <img src="../static/img/cello.png" style="width: 200px; height:200px; margin-left:auto; margin-right: auto;">
+                <p>Your task is to kill Cello using attacking patterns in fewest possible moves. 
+                  The final objective is to try to do so in 1 move only.</p>
+                <p>Click in a cell to change its color.</p>
+                <ul>
+                  <li>Any black cell with exactly 3 white neighbors comes to life.</li>
+                  <li>Any alive cell with less than 2 or more than 3 white neighbors turns to black.</li>
+                </ul>
+                <p>When the game is paused, you can create different patterns of white cells in the grid.
+                  When you press play, these cells will interact with each other based on the above mentioned rules.
+                  Each time you click play is counted as one move.
+                  Depending on their arrangement, you can make a wide variety of patterns.
+                </p>
+                <ul>
+                  <li>
+                    <p>Glider : Travels till infinity</p>
+                    <img src="../static/img/glider.png" style="width: 200px; height:200px;">
+                  </li>
+                  <li>
+                    <p>Stables : Once the form, they don't change</p>
+                    <img src="../static/img/box.png" style="width: 600px; height:200px;">
+                  </li>
+                  <li>
+                    <p>Oscillator : keeps changing back and forth</p>
+                    <img src="../static/img/fan.png" style="width: 200px; height:200px;">
+                  </li>
+                  <li>
+                    <p>OR CREATE A NEW PATTERN...</p>
+                  </li>
+                </ul>
+                <p>Use the practice mode to try out new patterns for fun.</p>
+                <p>There. You are ready to play. All the best</p>
+              </div>
+          </div>
+            
+        </div>
       </div>
       <script type="text/javascript" src="{{ url_for('static', filename='javascript/game.js') }}"></script>
     </body>
